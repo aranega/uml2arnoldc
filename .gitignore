@@ -1,0 +1,19 @@
+*.class
+*.orig
+*~
+
+# Eclipse files #
+META-INF/
+tasks/
+*/bin/
+*/inputs/
+*/output/
+.settings/
+.classpath
+.project
+*.acceleo
+*.properties
+*.java
+*.emtl
+*.xmi
+*.log
