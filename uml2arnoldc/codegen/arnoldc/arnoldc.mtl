@@ -13,25 +13,100 @@ YOU HAVE BEEN TERMINATED
 
 [a.ownedNode.genNodeCode()/]
 
+[a.ownedNode.genMethod()/]
+
 [/file]
 [/template]
 
 [template public genFirstCall(n : ActivityNode)/]
 [template public genFirstCall(i : InitialNode)]
-DO IT NOW [i.outgoing.target.name/] 1
+DO IT NOW [i.outgoing.target.genName()/] 1
 [/template]
 
 
 [template public genNodeCode(n : ActivityNode)/]
-[template public genNodeCode(o : Action)]
+[template public genNodeCode(a : Action)]
 
-LISTEN TO ME VERY CAREFULLY [o.name/]
+
+LISTEN TO ME VERY CAREFULLY [a.genName()/]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
 GIVE THESE PEOPLE AIR
-	TALK TO THE HAND "Entering [o.name/]"
-
-	I'LL BE BACK 999
+	TALK TO THE HAND "Entering [a.genName()/]"
+ 	HEY CHRISTMAS TREE current
+ 	YOU SET US UP tok
+[for (an : ActivityNode | a.outgoing.target)]
+	GET YOUR ASS TO MARS current
+	DO IT NOW [an.genName()/] current
+[/for]
+	I'LL BE BACK current
 HASTA LA VISTA, BABY
 
 
 [/template]
+[template public genNodeCode(f : ActivityFinalNode)]
+
+
+LISTEN TO ME VERY CAREFULLY [self.genName()/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
+GIVE THESE PEOPLE AIR
+	TALK TO THE HAND "End from [f.incoming.source.genName()/]"
+	I'LL BE BACK tok
+HASTA LA VISTA, BABY
+
+[/template]
+
+[template public genName(a : ActivityNode)/]
+[template public genName(n : Action)]
+[n.name/]
+[/template]
+
+[template public genName(f : ForkNode)]
+[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.name/][/for]2[for ( a: ActivityNode | f.outgoing.target) separator('AND')][a.name/][/for]
+[/template]
+
+[template public genName(j : JoinNode)]
+[for ( a: ActivityNode | j.incoming.source) separator('AND')][a.name/][/for]2[for ( a: ActivityNode | j.outgoing.target) separator('AND')][a.name/][/for]
+[/template]
+
+[template public genName(f : ActivityFinalNode)]
+endFrom[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.genName()/][/for]
+[/template]
+
+[template public genMethod(a : ActivityNode)/]
+[template public genMethod(f : ControlNode)? (f->select(f.oclIsKindOf(InitialNode))->isEmpty() and f->select(f.oclIsKindOf(ActivityFinalNode))->isEmpty())]
+
+
+LISTEN TO ME VERY CAREFULLY [f.genName()/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
+GIVE THESE PEOPLE AIR
+	HEY CHRISTMAS TREE current
+	YOU SET US UP tok
+	HEY CHRISTMAS TREE res
+	YOU SET US UP tok
+	GET TO THE CHOPPER res
+	HERE IS MY INVITATION [f.incoming.source->size()/]
+	LET OFF SOME STEAM BENNET res
+	ENOUGH TALK
+	BECAUSE I'M GOING TO SAY PLEASE res
+	BULLSHIT
+[for (a : ActivityNode | f.outgoing.target)]
+		GET YOUR ASS TO MARS current
+		DO IT NOW [a.genName()/] current
+[/for]
+	I'LL BE BACK current
+	YOU HAVE NO RESPECT FOR LOGIC
+	GET TO THE CHOPPER tok
+	HERE IS MY INVITATION tok
+	GET UP 1
+	ENOUGH TALK 
+	I'LL BE BACK tok
+HASTA LA VISTA, BABY
+
+
+[/template]
+
+
+
+
+
+

@@ -11,7 +11,5 @@ modeltype uml uses uml('http://www.eclipse.org/uml2/4.0.0/UML');
 transformation test(in model: uml);
 main()
 {	
-	log('\n@ON-STDOUT out', model.objects()[ActivityNode]);
-	log('@ON-STDOUT in', model.objects()[Action].incoming);
-	log('@ON-STDOUT in', model.objects()[Activity].variable);
+	log('@ON-STDOUT in', model.objects()[Activity]->selectOne(name = 'thirdOne').ownedNode[FinalNode]);
 }
