@@ -1,4 +1,5 @@
 <generator>
   <name>uml2arnoldc</name>
-  <m2t name="arnoldc.mtl" />
+  <m2m name="test.qvto" />
+  <m2t name="arnoldc/arnoldc.mtl" />
 </generator>

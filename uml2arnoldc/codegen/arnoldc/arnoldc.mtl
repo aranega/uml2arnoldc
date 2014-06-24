@@ -2,9 +2,36 @@
 [module arnoldc('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 
-[template public generate(m : Activity)]
+[template public generate(a : Activity)]
 [comment @main/]
-[file (m.name.concat('.arnoldc'), false, 'UTF-8')]
+[file (a.name.concat('.arnoldc'), false, 'UTF-8')]
+IT'S SHOWTIME
+	[a.ownedNode.genFirstCall()/]
+YOU HAVE BEEN TERMINATED
+
+
+
+[a.ownedNode.genNodeCode()/]
 
 [/file]
+[/template]
+
+[template public genFirstCall(n : ActivityNode)/]
+[template public genFirstCall(i : InitialNode)]
+DO IT NOW [i.outgoing.target.name/] 1
+[/template]
+
+
+[template public genNodeCode(n : ActivityNode)/]
+[template public genNodeCode(o : Action)]
+
+LISTEN TO ME VERY CAREFULLY [o.name/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
+GIVE THESE PEOPLE AIR
+	TALK TO THE HAND "Entering [o.name/]"
+
+	I'LL BE BACK 999
+HASTA LA VISTA, BABY
+
+
 [/template]
