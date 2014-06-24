@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module arnoldc('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+
+[template public generate(m : Activity)]
+[comment @main/]
+[file (m.name.concat('.arnoldc'), false, 'UTF-8')]
+
+[/file]
+[/template]
