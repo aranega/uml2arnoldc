@@ -20,7 +20,7 @@ YOU HAVE BEEN TERMINATED.
 [a.genNodeCode()/]
 [/for]
 
-[for (j : JoinNode | a.ownedNode->selectByType(JoinNode)) { i : Integer = i + 1; }]
+[for (j : JoinNode | a.ownedNode->select(oclIsTypeOf(JoinNode)).oclAsType(JoinNode)) { i : Integer = i + 1; }]
 [j.genJoinNodeCode(i)/]
 [/for]
 
