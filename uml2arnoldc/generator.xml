@@ -2,4 +2,5 @@
   <name>uml2arnoldc</name>
   <m2m name="test.qvto" />
   <m2t name="arnoldc/arnoldc.mtl" />
+  <m2t name="arnoldc/googleTranslateIt.mtl" />
 </generator>

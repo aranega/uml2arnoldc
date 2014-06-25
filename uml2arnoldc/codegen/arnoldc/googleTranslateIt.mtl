@@ -1,0 +1,163 @@
+[comment encoding = UTF-8 /]
+[module googleTranslateIt('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+
+[template public generate(a : Activity) { i : Integer = 0; } ]
+[comment @main/]
+[file (a.name.concat('.gtranslate'), false, 'UTF-8')]
+[let mainState : String = 'mainState']
+IT'S SHOWTIME.
+	
+	HEY CHRISTMAS TREE.
+	YOU SET is UP.
+
+	[a.ownedNode.genFirstCall(mainState)/]
+
+YOU HAVE BEEN TERMINATED.
+[/let]
+
+[for (a : ActivityNode | a.ownedNode->select(not oclIsTypeOf(JoinNode)))]
+[a.genNodeCode()/]
+[/for]
+
+[for (j : JoinNode | a.ownedNode->selectByType(JoinNode)) { i : Integer = i + 1; }]
+[j.genJoinNodeCode(i)/]
+[/for]
+
+[/file]
+[/template]
+
+[template public genFirstCall(n : ActivityNode, stateName : String)/]
+[template public genFirstCall(i : InitialNode, stateName : String)]
+do it NOW.
+[/template]
+
+
+[template public genNodeCode(a : ActivityNode) ? (oclIsKindOf(Action) or oclIsKindOf(ForkNode) or oclIsKindOf(MergeNode))]
+
+
+LISTEN to me VERY CAREFULLY.
+I NEED YOUR CLOTHES YOUR BOOTS and your MOTORCYCLE.
+GIVE THESE PEOPLE air. [if (a.oclIsKindOf(Action))]['\n'/]TALK to the HAND.[/if]
+[for (an : ActivityNode | a.outgoing.target)]
+	GET YOUR ass to MARS.
+	do it NOW.
+[/for]
+	I'LL BE BACK.
+hastala VISTA, BABY.
+
+
+[/template]
+
+
+[template public genNodeCode(d : DecisionNode)]
+
+
+
+LISTEN TO ME VERY CAREFULLY.
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE.
+GIVE THESE PEOPLE AIR.
+	
+	HEY CHRISTMAS TREE.
+	YOU SET us UP.
+	GET YOUR ass TO MARS.
+	do it NOW.
+	BECAUSE I'M GOING TO SAY PLEASE.
+	[for (an : ActivityNode | d.outgoing->select(guard.stringValue() = 'true').target)]
+		GET YOUR ass TO MARS.
+		do it NOW.
+	[/for]
+	BULLSHIT.
+	[for (an : ActivityNode | d.outgoing->select(guard.stringValue() = 'false').target)]
+		GET YOUR ass to MARS.
+		do it NOW.
+	[/for]
+	YOU HAVE NO RESPECT FOR LOGIC.
+
+	I'LL BE BACK.
+hastala VISTA, BABY.
+
+LISTEN TO ME VERY CAREFULLY.
+GIVE THESE PEOPLE AIR.
+	I'LL BE BACK, NO PROBLEMO.
+hastala VISTA, BABY.
+
+
+[/template]
+
+[template public genNodeCode(f : ActivityFinalNode)]
+
+
+LISTEN TO ME VERY CAREFULLY.
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE.
+GIVE THESE PEOPLE AIR.
+	TALK TO THE HAND.
+	I'LL BE BACK.
+hastala VISTA, BABY.
+
+[/template]
+
+[template public genNodeCode(f : FlowFinalNode)]
+
+
+LISTEN TO ME VERY CAREFULLY.
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE.
+GIVE THESE PEOPLE AIR.
+	TALK TO THE HAND.
+	I'LL BE BACK.
+hastala VISTA, BABY.
+
+[/template]
+
+
+[template public genJoinNodeCode(j : JoinNode, id : Integer)]
+
+
+LISTEN TO ME VERY CAREFULLY.
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE.
+GIVE THESE PEOPLE AIR.
+
+	GET YOUR ass TO MARS.
+	do it NOW.
+
+	HEY CHRISTMAS TREE.
+	YOU SET us UP.
+	GET YOUR ass TO MARS.
+	do it NOW.
+	GET TO THE CHOPPER.
+	HERE IS MY INVITATION.
+	YOU ARE NOT YOU YOU ARE ME.
+	ENOUGH TALK.
+	BECAUSE I'M GOING TO SAY PLEASE.
+	[for (an : ActivityNode | j.outgoing.target)]
+		GET YOUR ass TO MARS.
+		do it NOW.
+	[/for]
+	YOU HAVE NO RESPECT FOR LOGIC.
+		
+	I'LL BE BACK.
+hastala VISTA, BABY.
+
+
+[/template]
+
+
+[comment]
+[template public genName(a : ActivityNode)/]
+[template public genName(n : Action)]
+[n.name/]
+[/template]
+
+[template public genName(f : ForkNode)]
+[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.name/][/for]2[for ( a: ActivityNode | f.outgoing.target) separator('AND')][a.name/][/for]
+[/template]
+
+[template public genName(j : JoinNode)]
+[for ( a: ActivityNode | j.incoming.source) separator('AND')][a.name/][/for]2[for ( a: ActivityNode | j.outgoing.target) separator('AND')][a.name/][/for]
+[/template]
+
+[template public genName(f : ActivityFinalNode)]
+endFrom[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.genName()/][/for]
+[/template]
+
+[/comment]
