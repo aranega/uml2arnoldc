@@ -2,59 +2,184 @@
 [module arnoldc('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 
-[template public generate(a : Activity)]
+[template public generate(a : Activity) { i : Integer = 0; } ]
 [comment @main/]
 [file (a.name.concat('.arnoldc'), false, 'UTF-8')]
+[let mainState : String = 'mainState']
 IT'S SHOWTIME
-	[a.ownedNode.genFirstCall()/]
+	
+	HEY CHRISTMAS TREE [mainState/]
+	YOU SET US UP 0000000000
+
+	[a.ownedNode.genFirstCall(mainState)/]
+
 YOU HAVE BEEN TERMINATED
+[/let]
+
+[for (a : ActivityNode | a.ownedNode->select(not oclIsTypeOf(JoinNode)))]
+[a.genNodeCode()/]
+[/for]
+
+[for (j : JoinNode | a.ownedNode->selectByType(JoinNode)) { i : Integer = i + 1; }]
+[j.genJoinNodeCode(i)/]
+[/for]
+
+
+LISTEN TO ME VERY CAREFULLY incState
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE num
+GIVE THESE PEOPLE AIR
+
+     HEY CHRISTMAS TREE newState
+     YOU SET US UP state
+
+     HEY CHRISTMAS TREE op
+     YOU SET US UP 0
+     GET YOUR ASS TO MARS op
+     DO IT NOW genOp num
+
+     GET TO THE CHOPPER newState
+     HERE IS MY INVITATION newState
+     GET UP op
+     ENOUGH TALK
+     
+I'LL BE BACK newState
+HASTA LA VISTA, BABY
+
+LISTEN TO ME VERY CAREFULLY getState
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE num
+GIVE THESE PEOPLE AIR
+     
+     HEY CHRISTMAS TREE res
+     YOU SET US UP state
+
+     HEY CHRISTMAS TREE op
+     YOU SET US UP 0
+     GET YOUR ASS TO MARS op
+     DO IT NOW genOp num
+
+     GET TO THE CHOPPER res
+     HERE IS MY INVITATION res
+     HE HAD TO SPLIT op
+     I LET HIM GO 10
+     ENOUGH TALK
+     
+I'LL BE BACK res
+HASTA LA VISTA, BABY
 
 
 
-[a.ownedNode.genNodeCode()/]
+LISTEN TO ME VERY CAREFULLY genOp
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE n
+GIVE THESE PEOPLE AIR
 
-[a.ownedNode.genMethod()/]
+     HEY CHRISTMAS TREE res
+     YOU SET US UP 1
+
+     GET TO THE CHOPPER n
+     HERE IS MY INVITATION n
+     GET DOWN 1
+     ENOUGH TALK
+ 
+     STICK AROUND n
+		 GET TO THE CHOPPER n
+     	     HERE IS MY INVITATION n
+     	     GET DOWN 1
+     	 ENOUGH TALK
+		 GET TO THE CHOPPER res
+	    	 HERE IS MY INVITATION res
+	    	 YOU'RE FIRED 10
+		 ENOUGH TALK
+     CHILL
+     
+I'LL BE BACK res
+HASTA LA VISTA, BABY
 
 [/file]
 [/template]
 
-[template public genFirstCall(n : ActivityNode)/]
-[template public genFirstCall(i : InitialNode)]
-DO IT NOW [i.outgoing.target.genName()/] 1
+[template public genFirstCall(n : ActivityNode, stateName : String)/]
+[template public genFirstCall(i : InitialNode, stateName : String)]
+DO IT NOW [i.outgoing.target.name/] [stateName/]
 [/template]
 
 
-[template public genNodeCode(n : ActivityNode)/]
-[template public genNodeCode(a : Action)]
+[template public genNodeCode(a : ActivityNode) ? (oclIsKindOf(Action) or oclIsKindOf(ForkNode))]
 
 
-LISTEN TO ME VERY CAREFULLY [a.genName()/]
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
+LISTEN TO ME VERY CAREFULLY [a.name/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR
-	TALK TO THE HAND "Entering [a.genName()/]"
- 	HEY CHRISTMAS TREE current
- 	YOU SET US UP tok
+	[if (a.oclIsKindOf(Action))]TALK TO THE HAND "Entering [a.name/]"[/if]
 [for (an : ActivityNode | a.outgoing.target)]
-	GET YOUR ASS TO MARS current
-	DO IT NOW [an.genName()/] current
+	GET YOUR ASS TO MARS state
+	DO IT NOW [an.name/] state
 [/for]
-	I'LL BE BACK current
+	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
 
 [/template]
+
 [template public genNodeCode(f : ActivityFinalNode)]
 
 
-LISTEN TO ME VERY CAREFULLY [self.genName()/]
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
+LISTEN TO ME VERY CAREFULLY [self.name/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR
-	TALK TO THE HAND "End from [f.incoming.source.genName()/]"
-	I'LL BE BACK tok
+	TALK TO THE HAND "End from [f.incoming.source.name/]"
+	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
 [/template]
 
+[template public genNodeCode(f : FlowFinalNode)]
+
+
+LISTEN TO ME VERY CAREFULLY [self.name/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+GIVE THESE PEOPLE AIR
+	TALK TO THE HAND "FLOW END FROM [f.incoming.source.name/] WITH AN ERROR"
+	I'LL BE BACK state
+HASTA LA VISTA, BABY
+
+[/template]
+
+
+[template public genJoinNodeCode(j : JoinNode, id : Integer)]
+
+
+LISTEN TO ME VERY CAREFULLY [j.name/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+GIVE THESE PEOPLE AIR
+
+	GET YOUR ASS TO MARS state
+	DO IT NOW incState state [id/]
+
+	HEY CHRISTMAS TREE myState
+	YOU SET US UP 0
+	GET YOUR ASS TO MARS myState
+	DO IT NOW getState state [id/]
+	GET TO THE CHOPPER myState
+	HERE IS MY INVITATION myState
+	YOU ARE NOT YOU YOU ARE ME [j.incoming.source->size()/]
+	ENOUGH TALK
+	BECAUSE I'M GOING TO SAY PLEASE myState
+	[for (an : ActivityNode | j.outgoing.target)]
+		GET YOUR ASS TO MARS state
+		DO IT NOW [an.name/] state
+	[/for]
+	YOU HAVE NO RESPECT FOR LOGIC
+		
+	I'LL BE BACK state
+HASTA LA VISTA, BABY
+
+
+[/template]
+
+
+[comment]
 [template public genName(a : ActivityNode)/]
 [template public genName(n : Action)]
 [n.name/]
@@ -72,41 +197,4 @@ HASTA LA VISTA, BABY
 endFrom[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.genName()/][/for]
 [/template]
 
-[template public genMethod(a : ActivityNode)/]
-[template public genMethod(f : ControlNode)? (f->select(f.oclIsKindOf(InitialNode))->isEmpty() and f->select(f.oclIsKindOf(ActivityFinalNode))->isEmpty())]
-
-
-LISTEN TO ME VERY CAREFULLY [f.genName()/]
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE tok
-GIVE THESE PEOPLE AIR
-	HEY CHRISTMAS TREE current
-	YOU SET US UP tok
-	HEY CHRISTMAS TREE res
-	YOU SET US UP tok
-	GET TO THE CHOPPER res
-	HERE IS MY INVITATION [f.incoming.source->size()/]
-	LET OFF SOME STEAM BENNET res
-	ENOUGH TALK
-	BECAUSE I'M GOING TO SAY PLEASE res
-	BULLSHIT
-[for (a : ActivityNode | f.outgoing.target)]
-		GET YOUR ASS TO MARS current
-		DO IT NOW [a.genName()/] current
-[/for]
-	I'LL BE BACK current
-	YOU HAVE NO RESPECT FOR LOGIC
-	GET TO THE CHOPPER tok
-	HERE IS MY INVITATION tok
-	GET UP 1
-	ENOUGH TALK 
-	I'LL BE BACK tok
-HASTA LA VISTA, BABY
-
-
-[/template]
-
-
-
-
-
-
+[/comment]
