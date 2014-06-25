@@ -105,18 +105,53 @@ DO IT NOW [i.outgoing.target.name/] [stateName/]
 [/template]
 
 
-[template public genNodeCode(a : ActivityNode) ? (oclIsKindOf(Action) or oclIsKindOf(ForkNode))]
+[template public genNodeCode(a : ActivityNode) ? (oclIsKindOf(Action) or oclIsKindOf(ForkNode) or oclIsKindOf(MergeNode))]
 
 
 LISTEN TO ME VERY CAREFULLY [a.name/]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-GIVE THESE PEOPLE AIR
-	[if (a.oclIsKindOf(Action))]TALK TO THE HAND "Entering [a.name/]"[/if]
+GIVE THESE PEOPLE AIR [if (a.oclIsKindOf(Action))]['\n'/]TALK TO THE HAND "Entering [a.name/]"[/if]
 [for (an : ActivityNode | a.outgoing.target)]
 	GET YOUR ASS TO MARS state
 	DO IT NOW [an.name/] state
 [/for]
 	I'LL BE BACK state
+HASTA LA VISTA, BABY
+
+
+[/template]
+
+
+[template public genNodeCode(d : DecisionNode)]
+
+
+
+LISTEN TO ME VERY CAREFULLY [d.name/]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+GIVE THESE PEOPLE AIR 
+	
+	HEY CHRISTMAS TREE predVal
+	YOU SET US UP 0
+	GET YOUR ASS TO MARS predVal
+	DO IT NOW predicateFor[d.name/]
+	BECAUSE I'M GOING TO SAY PLEASE predVal
+	[for (an : ActivityNode | d.outgoing->select(guard.stringValue() = 'true').target)]
+		GET YOUR ASS TO MARS state
+		DO IT NOW [an.name/] state
+	[/for]
+	BULLSHIT
+	[for (an : ActivityNode | d.outgoing->select(guard.stringValue() = 'false').target)]
+		GET YOUR ASS TO MARS state
+		DO IT NOW [an.name/] state
+	[/for]
+	YOU HAVE NO RESPECT FOR LOGIC
+
+	I'LL BE BACK state
+HASTA LA VISTA, BABY
+
+LISTEN TO ME VERY CAREFULLY predicateFor[d.name/]
+GIVE THESE PEOPLE AIR
+	I'LL BE BACK @NO PROBLEMO
 HASTA LA VISTA, BABY
 
 
