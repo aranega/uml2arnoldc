@@ -1,30 +1,18 @@
 [comment encoding = UTF-8 /]
 [module arnoldc('http://www.eclipse.org/uml2/4.0.0/UML')]
 
-
-[template public generate(a : Activity) { i : Integer = 0; } ]
+[template public generate(a : Model)]
 [comment @main/]
-[file (a.name.concat('.arnoldc'), false, 'UTF-8')]
-[let mainState : String = 'mainState']
+[file ('main.arnoldc', false, 'UTF-8')]
 IT'S SHOWTIME
-	
-	HEY CHRISTMAS TREE [mainState/]
-	YOU SET US UP 0000000000
-
-	[a.ownedNode.genFirstCall(mainState)/]
-
+	[a.ownedElement->select(oclIsTypeOf(Activity)).oclAsType(Activity).genInitCall()/]
 YOU HAVE BEEN TERMINATED
-[/let]
 
-[for (a : ActivityNode | a.ownedNode->select(not oclIsTypeOf(JoinNode)))]
-[a.genNodeCode()/]
-[/for]
+[/file]
 
-[for (j : JoinNode | a.ownedNode->select(oclIsTypeOf(JoinNode)).oclAsType(JoinNode)) { i : Integer = i + 1; }]
-[j.genJoinNodeCode(i)/]
-[/for]
+[a.ownedElement->select(oclIsTypeOf(Activity)).oclAsType(Activity).genActivity()/]
 
-
+[file ('stateLib.arnoldc', false, 'UTF-8')]
 LISTEN TO ME VERY CAREFULLY incState
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE num
@@ -68,8 +56,6 @@ GIVE THESE PEOPLE AIR
 I'LL BE BACK res
 HASTA LA VISTA, BABY
 
-
-
 LISTEN TO ME VERY CAREFULLY genOp
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE n
 GIVE THESE PEOPLE AIR
@@ -95,98 +81,113 @@ GIVE THESE PEOPLE AIR
      
 I'LL BE BACK res
 HASTA LA VISTA, BABY
-
 [/file]
 [/template]
 
-[template public genFirstCall(n : ActivityNode, stateName : String)/]
-[template public genFirstCall(i : InitialNode, stateName : String)]
-DO IT NOW [i.outgoing.target.name/] [stateName/]
+[template public genActivity(a : Activity) { i : Integer = 0; } ]
+[file (a.name.concat('.arnoldc'), false, 'UTF-8')]
+[let initNode : InitialNode = a.ownedNode->select(oclIsTypeOf(InitialNode))->any(true) ]
+LISTEN TO ME VERY CAREFULLY [a.name/]
+[for (var : String | initNode.outgoing.guard->select(not isBoolVal())->any(true).stringValue().replaceAll(' ','').tokenize(','))]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE [var.trim()/]
+[/for]
+	HEY CHRISTMAS TREE state
+	YOU SET US UP 0000000000
+	[initNode.outgoing.genCall()/]
+HASTA LA VISTA, BABY
+[/let]
+
+[for (a : ActivityNode | a.ownedNode->select(not oclIsTypeOf(JoinNode)))]
+[a.genNodeCode()/]
+[/for]
+[for (j : JoinNode | a.ownedNode->select(oclIsTypeOf(JoinNode)).oclAsType(JoinNode)) { i : Integer = i + 1; }]
+[j.genJoinNodeCode(i)/]
+[/for]
+[/file]
 [/template]
 
-
 [template public genNodeCode(a : ActivityNode) ? (oclIsKindOf(Action) or oclIsKindOf(ForkNode) or oclIsKindOf(MergeNode))]
-
-
-LISTEN TO ME VERY CAREFULLY [a.name/]
+[let vars : Sequence(String) =	a.incoming->any(true).splitParams()]
+LISTEN TO ME VERY CAREFULLY [a.genName()/]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-GIVE THESE PEOPLE AIR [if (a.oclIsKindOf(Action))]['\n'/]TALK TO THE HAND "Entering [a.name/]"[/if]
-[for (an : ActivityNode | a.outgoing.target)]
+[for (var : String | vars)]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE [var.trim()/]
+[/for]
+GIVE THESE PEOPLE AIR [if (a.oclIsKindOf(Action))]['\n\t'/]TALK TO THE HAND "Entering [a.genName()/]"[/if]
+[for (var : String | vars)]
+	TALK TO THE HAND [var.trim()/]
+[/for]
+[for (ae : ActivityEdge | a.outgoing->select(target.activity <> null))]
 	GET YOUR ASS TO MARS state
-	DO IT NOW [an.name/] state
+	[ae.genCall()/]
 [/for]
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-
+[/let]
 [/template]
 
-
 [template public genNodeCode(d : DecisionNode)]
-
-
-
-LISTEN TO ME VERY CAREFULLY [d.name/]
+[let vars : Sequence(String) =	d.incoming->any(true).splitParams()]
+LISTEN TO ME VERY CAREFULLY [d.genName()/]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+[for (var : String | vars)]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE [var.trim()/]
+[/for]
 GIVE THESE PEOPLE AIR 
 	
 	HEY CHRISTMAS TREE predVal
 	YOU SET US UP 0
 	GET YOUR ASS TO MARS predVal
-	DO IT NOW predicateFor[d.name/]
+	[d.incoming.genCall('predicateFor', '', false)/]
 	BECAUSE I'M GOING TO SAY PLEASE predVal
-	[for (an : ActivityNode | d.outgoing->select(guard.stringValue() = 'true').target)]
+	[for (ae : ActivityEdge | d.outgoing->select(guard.stringValue().replaceAll(' ','').contains('true->')))]
 		GET YOUR ASS TO MARS state
-		DO IT NOW [an.name/] state
+		[ae.genCall()/]
 	[/for]
 	BULLSHIT
-	[for (an : ActivityNode | d.outgoing->select(guard.stringValue() = 'false').target)]
+	[for (ae : ActivityEdge | d.outgoing->select(guard.stringValue().replaceAll(' ','').contains('false->')))]
 		GET YOUR ASS TO MARS state
-		DO IT NOW [an.name/] state
+		[ae.genCall()/]
 	[/for]
 	YOU HAVE NO RESPECT FOR LOGIC
 
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY predicateFor[d.name/]
+LISTEN TO ME VERY CAREFULLY predicateFor[d.genName()/]
+[for (var : String | vars)]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE [var.trim()/]
+[/for]
 GIVE THESE PEOPLE AIR
 	I'LL BE BACK @NO PROBLEMO
 HASTA LA VISTA, BABY
 
-
+[/let]
 [/template]
 
-[template public genNodeCode(f : ActivityFinalNode)]
-
-
-LISTEN TO ME VERY CAREFULLY [self.name/]
+[template public genNodeCode(f : FinalNode)]
+[let vars : Sequence(String) =	f.incoming->any(true).splitParams()]
+LISTEN TO ME VERY CAREFULLY [f.genName()/]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+[for (var : String | vars)]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE [var.trim()/]
+[/for]
 GIVE THESE PEOPLE AIR
-	TALK TO THE HAND "End from [f.incoming.source.name/]"
+	TALK TO THE HAND "END FROM [f.incoming.source.genName()/][if (f.oclIsKindOf(FlowFinalNode))] WITH AN ERROR[/if]"
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
+[/let]
 [/template]
-
-[template public genNodeCode(f : FlowFinalNode)]
-
-
-LISTEN TO ME VERY CAREFULLY [self.name/]
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-GIVE THESE PEOPLE AIR
-	TALK TO THE HAND "FLOW END FROM [f.incoming.source.name/] WITH AN ERROR"
-	I'LL BE BACK state
-HASTA LA VISTA, BABY
-
-[/template]
-
 
 [template public genJoinNodeCode(j : JoinNode, id : Integer)]
-
-
-LISTEN TO ME VERY CAREFULLY [j.name/]
+[let vars : Sequence(String) =	j.incoming->any(true).splitParams()]
+LISTEN TO ME VERY CAREFULLY [j.genName()/]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
+[for (i : Integer | Sequence{0..vars->size()-1})]
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE p[i/]
+[/for]
 GIVE THESE PEOPLE AIR
 
 	GET YOUR ASS TO MARS state
@@ -201,35 +202,37 @@ GIVE THESE PEOPLE AIR
 	YOU ARE NOT YOU YOU ARE ME [j.incoming.source->size()/]
 	ENOUGH TALK
 	BECAUSE I'M GOING TO SAY PLEASE myState
-	[for (an : ActivityNode | j.outgoing.target)]
+	[for (ae : ActivityEdge | j.outgoing)]
 		GET YOUR ASS TO MARS state
-		DO IT NOW [an.name/] state
+		[ae.genCall()/]
 	[/for]
 	YOU HAVE NO RESPECT FOR LOGIC
 		
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-
+[/let]
 [/template]
 
-
-[comment]
-[template public genName(a : ActivityNode)/]
-[template public genName(n : Action)]
-[n.name/]
+[template public genCall(ae : ActivityEdge)]
+[ae.genCall('','', true)/]
 [/template]
 
-[template public genName(f : ForkNode)]
-[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.name/][/for]2[for ( a: ActivityNode | f.outgoing.target) separator('AND')][a.name/][/for]
+[template public genCall(ae : ActivityEdge, prefix : String, postfix : String, asState : Boolean)]
+DO IT NOW [prefix/][ae.target.genName()/][postfix/][if (asState)] state[/if] [if (not ae.guard.isBoolVal())][for (var : String | ae.guard.stringValue().replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(',')) separator (' ')][var.trim()/][/for][/if]
 [/template]
 
-[template public genName(j : JoinNode)]
-[for ( a: ActivityNode | j.incoming.source) separator('AND')][a.name/][/for]2[for ( a: ActivityNode | j.outgoing.target) separator('AND')][a.name/][/for]
+[template public genInitCall(a : Activity)]
+[let i : InitialNode = a.ownedNode->select(oclIsTypeOf(InitialNode))->any(true) ]
+DO IT NOW [a.name/][for (var : String | i.outgoing.guard->select(not isBoolVal()).stringValue().replaceAll(' ','').tokenize(','))] 0[/for]
+[/let]
 [/template]
 
-[template public genName(f : ActivityFinalNode)]
-endFrom[for ( a: ActivityNode | f.incoming.source) separator('AND')][a.genName()/][/for]
-[/template]
+[query public isBoolVal(v : ValueSpecification) : Boolean = (v.stringValue() = 'true' or v.stringValue() = 'false') /]
 
-[/comment]
+[query public genName(a : ActivityNode) : String = a.name.concat('From').concat(a.activity.name.toUpperFirst())/]
+
+[query public splitParams(a : ActivityEdge) : Sequence(String) = 
+			if not a.guard->select(not isBoolVal())->isEmpty()
+			then a.guard->select(not isBoolVal())->any(true).stringValue().replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(',') 
+			else Sequence{} endif /]
