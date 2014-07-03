@@ -55,48 +55,48 @@ the presented examples [here](https://repository.genmymodel.com/vincent.aranega/
 This diagram expresses that the `Action1` and `Action2` have no call order, but they have to be finished before going to the end. Here is the generated code:
 
 ```
-LISTEN TO ME VERY CAREFULLY simpleSync
+LISTEN TO ME VERY CAREFULLY simpleSync   -> general function
 	HEY CHRISTMAS TREE state
 	YOU SET US UP 0000000000
 	DO IT NOW ForkNodeFromSimpleSync state 
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY Action2FromSimpleSync
+LISTEN TO ME VERY CAREFULLY Action2FromSimpleSync       -> generated function for Action2
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR 
 	TALK TO THE HAND "Entering Action2FromSimpleSync"
 	GET YOUR ASS TO MARS state
-	DO IT NOW JoinNodeFromSimpleSync state 
+	DO IT NOW JoinNodeFromSimpleSync state             -> generated call
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY ForkNodeFromSimpleSync
+LISTEN TO ME VERY CAREFULLY ForkNodeFromSimpleSync       -> generated function for the fork
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR 
 	GET YOUR ASS TO MARS state
-	DO IT NOW Action2FromSimpleSync state 
+	DO IT NOW Action2FromSimpleSync state            -> generated call
 	GET YOUR ASS TO MARS state
-	DO IT NOW ActionFromSimpleSync state 
+	DO IT NOW ActionFromSimpleSync state             -> generated call
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY ActionFromSimpleSync
+LISTEN TO ME VERY CAREFULLY ActionFromSimpleSync           -> generated fuction for Action
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR 
 	TALK TO THE HAND "Entering ActionFromSimpleSync"
 	GET YOUR ASS TO MARS state
-	DO IT NOW JoinNodeFromSimpleSync state 
+	DO IT NOW JoinNodeFromSimpleSync state            -> generated call
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY ActivityFinalNodeFromSimpleSync
+LISTEN TO ME VERY CAREFULLY ActivityFinalNodeFromSimpleSync  -> generated function for the final node
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR
 	TALK TO THE HAND "END FROM JoinNodeFromSimpleSync"
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY JoinNodeFromSimpleSync
+LISTEN TO ME VERY CAREFULLY JoinNodeFromSimpleSync            -> generated function for the join
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
 GIVE THESE PEOPLE AIR
 
@@ -111,7 +111,7 @@ GIVE THESE PEOPLE AIR
 	HERE IS MY INVITATION myState
 	YOU ARE NOT YOU YOU ARE ME 2
 	ENOUGH TALK
-	BECAUSE I'M GOING TO SAY PLEASE myState
+	BECAUSE I'M GOING TO SAY PLEASE myState        -> check if it has been called enough
 		GET YOUR ASS TO MARS state
 		DO IT NOW ActivityFinalNodeFromSimpleSync state 
 	YOU HAVE NO RESPECT FOR LOGIC
@@ -173,37 +173,37 @@ Here is the generated code.
 
 ```
 LISTEN TO ME VERY CAREFULLY withVars
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var1
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var2
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var1  -> generated parameter
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var2  -> generated parameter
 	HEY CHRISTMAS TREE state
 	YOU SET US UP 0000000000
-	DO IT NOW ForkNodeFromWithVars state var1 var2
+	DO IT NOW ForkNodeFromWithVars state var1 var2   -> generated call with parameters
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY ActivityFinalNodeFromWithVars
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE p0
+LISTEN TO ME VERY CAREFULLY ActivityFinalNodeFromWithVars  
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state 
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE p0      -> generated parameter
 GIVE THESE PEOPLE AIR
 	TALK TO THE HAND "END FROM JoinNodeFromWithVars"
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
 LISTEN TO ME VERY CAREFULLY Action2FromWithVars
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var1
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE a
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state 
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var1   -> generated parameter
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE a      -> generated parameter
 GIVE THESE PEOPLE AIR 
 	TALK TO THE HAND "Entering Action2FromWithVars"
-	HEY CHRISTMAS TREE res
+	HEY CHRISTMAS TREE res                            -> generated variable 'res'
 	YOU SET US UP 0
 	GET YOUR ASS TO MARS state
-	DO IT NOW JoinNodeFromWithVars state res
+	DO IT NOW JoinNodeFromWithVars state res           -> generated call with parameters
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
 LISTEN TO ME VERY CAREFULLY ActionFromWithVars
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var2
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state 
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var2   -> generated parameter
 GIVE THESE PEOPLE AIR 
 	TALK TO THE HAND "Entering ActionFromWithVars"
 	GET YOUR ASS TO MARS state
@@ -213,21 +213,21 @@ HASTA LA VISTA, BABY
 
 LISTEN TO ME VERY CAREFULLY ForkNodeFromWithVars
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var1
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var2
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var1   -> generated parameter
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE var2   -> generated parameter
 GIVE THESE PEOPLE AIR 
-	HEY CHRISTMAS TREE a
+	HEY CHRISTMAS TREE a                          -> generated variable 'a'
 	YOU SET US UP 0
 	GET YOUR ASS TO MARS state
-	DO IT NOW ActionFromWithVars state var2
+	DO IT NOW ActionFromWithVars state var2       -> generated call with parameters
 	GET YOUR ASS TO MARS state
-	DO IT NOW Action2FromWithVars state var1 a
+	DO IT NOW Action2FromWithVars state var1 a    -> generated call with parameters
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
 LISTEN TO ME VERY CAREFULLY JoinNodeFromWithVars
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE p0
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE p0    -> generated parameter
 GIVE THESE PEOPLE AIR
 
 	GET YOUR ASS TO MARS state
@@ -243,7 +243,7 @@ GIVE THESE PEOPLE AIR
 	ENOUGH TALK
 	BECAUSE I'M GOING TO SAY PLEASE myState
 		GET YOUR ASS TO MARS state
-		DO IT NOW ActivityFinalNodeFromWithVars state p0
+		DO IT NOW ActivityFinalNodeFromWithVars state p0  -> generated call with parameters
 	YOU HAVE NO RESPECT FOR LOGIC
 		
 	I'LL BE BACK state
@@ -267,22 +267,22 @@ GIVE THESE PEOPLE AIR
 	YOU SET US UP 0
 	GET YOUR ASS TO MARS predVal
 	DO IT NOW predicateForgtTo30FromWithIf i
-	BECAUSE I'M GOING TO SAY PLEASE predVal
+	BECAUSE I'M GOING TO SAY PLEASE predVal      ->  if
 		GET YOUR ASS TO MARS state
-		DO IT NOW Action2FromWithIf state i
-	BULLSHIT
-		GET YOUR ASS TO MARS state
-		DO IT NOW Action3FromWithIf state i
-	YOU HAVE NO RESPECT FOR LOGIC
+		DO IT NOW Action2FromWithIf state i      -> generated call
+	BULLSHIT                                     -> else
+		GET YOUR ASS TO MARS state 
+		DO IT NOW Action3FromWithIf state i      -> generated call 
+	YOU HAVE NO RESPECT FOR LOGIC 
 
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY predicateForgtTo30FromWithIf
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE i
-GIVE THESE PEOPLE AIR
-	I'LL BE BACK @NO PROBLEMO
-HASTA LA VISTA, BABY
+LISTEN TO ME VERY CAREFULLY predicateForgtTo30FromWithIf -+
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE i      |
+GIVE THESE PEOPLE AIR                                     | Here is the code we need to change
+	I'LL BE BACK @NO PROBLEMO                             |
+HASTA LA VISTA, BABY                                     -+
 
 LISTEN TO ME VERY CAREFULLY leTo100FromWithIf
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE state
@@ -293,22 +293,22 @@ GIVE THESE PEOPLE AIR
 	YOU SET US UP 0
 	GET YOUR ASS TO MARS predVal
 	DO IT NOW predicateForleTo100FromWithIf i
-	BECAUSE I'M GOING TO SAY PLEASE predVal
+	BECAUSE I'M GOING TO SAY PLEASE predVal      ->  if
 		GET YOUR ASS TO MARS state
-		DO IT NOW Action4FromWithIf state 
-	BULLSHIT
+		DO IT NOW Action4FromWithIf state        -> generated call
+	BULLSHIT                                     -> else
 		GET YOUR ASS TO MARS state
-		DO IT NOW FlowFinalNodeFromWithIf state 
+		DO IT NOW FlowFinalNodeFromWithIf state   -> generated call 
 	YOU HAVE NO RESPECT FOR LOGIC
 
 	I'LL BE BACK state
 HASTA LA VISTA, BABY
 
-LISTEN TO ME VERY CAREFULLY predicateForleTo100FromWithIf
-I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE i
-GIVE THESE PEOPLE AIR
-	I'LL BE BACK @NO PROBLEMO
-HASTA LA VISTA, BABY
+LISTEN TO ME VERY CAREFULLY predicateForleTo100FromWithIf  -+
+I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE i        |
+GIVE THESE PEOPLE AIR                                       | Here is the code we need to change
+	I'LL BE BACK @NO PROBLEMO                               |
+HASTA LA VISTA, BABY                                       -+
 ```
 
 Then, here is only the `predicate` function with manual addition (to actually performs the comparisons).
