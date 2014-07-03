@@ -88,7 +88,7 @@ HASTA LA VISTA, BABY
 [file (a.name.concat('.arnoldc'), false, 'UTF-8')]
 [let initNode : InitialNode = a.ownedNode->select(oclIsTypeOf(InitialNode))->any(true) ]
 LISTEN TO ME VERY CAREFULLY [a.name/]
-[for (var : String | initNode.outgoing.guard->select(not isBoolVal())->any(true).stringValue().replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(','))]
+[for (var : String | initNode.outgoing.splitParams())]
 I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE [var.trim()/]
 [/for]
 	HEY CHRISTMAS TREE state
@@ -236,7 +236,7 @@ DO IT NOW [a.name/][for (var : String | i.outgoing->select(activity <> null).gua
 
 [query public splitParams(a : ActivityEdge) : Sequence(String) = 
 			if not a.guard->select(not isBoolVal())->isEmpty()
-			then a.guard->select(not isBoolVal())->any(true).stringValue().replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(',')
+			then a.guard->select(not isBoolVal())->any(true).stringValue().replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(',')->reject(e : String | e = 'true' or e = 'false')
 			else Sequence{} endif /]
 
-[query public splitVars(s : String) : Sequence(String) = s.replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(',')/]
+[query public splitVars(s : String) : Sequence(String) = s.replaceAll(' ','').replaceAll('true->','').replaceAll('false->','').tokenize(',')->reject(e : String | e = 'true' or e = 'false')/]
