@@ -50,7 +50,7 @@ of Eclipse.
 As examples are easier to understand, here is a very simple activity diagram providing `fork`, `join` and `actions` nodes (and `initial` and `final` node of course). You can find
 the presented examples [here](https://repository.genmymodel.com/vincent.aranega/ArnoldExamples).
 
-![Simple Synchronization Activity](./imgs/simpleSync.svg)
+![Simple Synchronization Activity](./imgs/simpleSync.png)
 
 This diagram expresses that the `Action1` and `Action2` have no call order, but they have to be finished before going to the end. Here is the generated code:
 
@@ -142,7 +142,7 @@ We can clearly see that first, `Action2` had been executed, then `Action` before
 
 Here is another more complex example.
 
-![Complex Synchronization Activity](./imgs/complexSync.svg)
+![Complex Synchronization Activity](./imgs/complexSync.png)
 
 And the produced execution.
 
@@ -167,7 +167,7 @@ In the following example, we use vaiables. This activity expresses that two vari
 which value (`var2` or `res`) will be given to the `join node` because of the implementation we generate. Then, from this `join node` a variable `p0` is given to the `final node`. This variable
 will have either the `var2` value or the `res` value following the execution. More generally, each variable going from a `join node` to another node are named `p0, p1 ...`.
 
-![Activity with variables](./imgs/withVars.svg)
+![Activity with variables](./imgs/withVars.png)
 
 Here is the generated code.
 
@@ -253,7 +253,7 @@ HASTA LA VISTA, BABY
 Finally, here is an example of how `decision node` are managed by the generator. On a `decision`, outgoing `control flow` guards are parsed. Each `true -> xxx` results in calls generated into the `then` section
 of an `if` and each `false -> xxx` results in calls generated into the `else` section.
 
-![Activity with variables](./imgs/withIf.svg)
+![Activity with variables](./imgs/withIf.png)
 
 Here is the generated `decision` functions before manual additions.
 
