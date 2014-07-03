@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="13" width="342" height="104">
+	<desc>UML diagram arnoldExamples</desc>
+	<g id="_9pmsQeSyEDGNZbmyTra1pQ">
+		<defs>
+			<linearGradient id="greyGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#E5E5E5" stop-opacity="1" />
+				
+			</linearGradient>
+			<linearGradient id="packageGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="1" />
+				
+			</linearGradient>
+			
+		</defs>
+		<g id="__l72EOSyEDGNZbmyTra1pQ">
+			<ellipse cx="12" cy="41" rx="10" ry="10" fill="#4D4D4D" stroke="#000" stroke-width="1.0" />
+			
+		</g>
+		<g id="_AGb7EOSzEDGNZbmyTra1pQ">
+			<rect x="73" y="15" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="_A4ylEOSzEDGNZbmyTra1pQ">
+			<rect x="124" y="2" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="164" y="24" text-anchor="middle" font-style="normal" fill="#806221">Action</text>
+			
+		</g>
+		<g id="_BAHVEOSzEDGNZbmyTra1pQ">
+			<rect x="124" y="49" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="164" y="71" text-anchor="middle" font-style="normal" fill="#806221">Action2</text>
+			
+		</g>
+		<g id="_CDonkOSzEDGNZbmyTra1pQ">
+			<rect x="246" y="15" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="_CrJ6kOSzEDGNZbmyTra1pQ">
+			<ellipse cx="312" cy="41" rx="10" ry="10" fill="#FFF" stroke="#888" stroke-width="1.0" />
+			<ellipse cx="312" cy="41" rx="6" ry="6" fill="#4D4D4D" stroke-width="0.0" />
+			
+		</g>
+		<g id="_FG0EseSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="22,41 73,40" />
+			<g transform="translate(73,40)">
+				<g transform="rotate(89)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_FaMTsOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="83,39 124,29" />
+			<g transform="translate(124,29)">
+				<g transform="rotate(76)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_FlAckeSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="83,42 124,54" />
+			<g transform="translate(124,54)">
+				<g transform="rotate(106)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_Fv7TIOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="204,29 246,39" />
+			<g transform="translate(246,39)">
+				<g transform="rotate(103)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_F5T4oOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="204,55 246,42" />
+			<g transform="translate(246,42)">
+				<g transform="rotate(73)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_GD1toOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="256,40 302,41" />
+			<g transform="translate(302,41)">
+				<g transform="rotate(91)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		
+	</g>
+	
+</svg>

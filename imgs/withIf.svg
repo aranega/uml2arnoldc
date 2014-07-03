@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="13" width="485" height="383">
+	<desc>UML diagram arnoldExamples</desc>
+	<g id="_1lY10eTAEDGNZbmyTra1pQ">
+		<defs>
+			<linearGradient id="greyGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#E5E5E5" stop-opacity="1" />
+				
+			</linearGradient>
+			<linearGradient id="packageGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="1" />
+				
+			</linearGradient>
+			
+		</defs>
+		<g id="_4ZMaMOTAEDGNZbmyTra1pQ">
+			<ellipse cx="43" cy="12" rx="10" ry="10" fill="#4D4D4D" stroke="#000" stroke-width="1.0" />
+			
+		</g>
+		<g id="_5lkGsOTAEDGNZbmyTra1pQ">
+			<rect x="2" y="78" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="42" y="100" text-anchor="middle" font-style="normal" fill="#806221">Action</text>
+			
+		</g>
+		<g id="_K8yRMOTBEDGNZbmyTra1pQ" transform="translate(43, 170)">
+			<g transform="rotate(45)">
+				<rect x="0" y="0" width="18" height="18" rx="0" ry="0" fill="url(#greyGradient)" stroke="#888" stroke-width="1" />
+				
+			</g>
+			
+		</g>
+		<g id="_LcS3sOTBEDGNZbmyTra1pQ">
+			<rect x="143" y="163" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="183" y="185" text-anchor="middle" font-style="normal" fill="#806221">Action2</text>
+			
+		</g>
+		<g id="_L_UFMOTBEDGNZbmyTra1pQ">
+			<rect x="2" y="252" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="42" y="274" text-anchor="middle" font-style="normal" fill="#806221">Action3</text>
+			
+		</g>
+		<g id="_QL8dsOTBEDGNZbmyTra1pQ" transform="translate(184, 72)">
+			<g transform="rotate(45)">
+				<rect x="0" y="0" width="18" height="18" rx="0" ry="0" fill="url(#greyGradient)" stroke="#888" stroke-width="1" />
+				
+			</g>
+			
+		</g>
+		<g id="_R3cWMOTBEDGNZbmyTra1pQ" transform="translate(174, 2)">
+			<ellipse cx="9" cy="9" rx="9" ry="9" fill="#FFF" stroke="#888" stroke-width="1.0" />
+			<polyline fill="none" stroke-width="1" stroke="#888" points="2, 2 16, 16" />
+			<polyline fill="none" stroke-width="1" stroke="#888" points="16, 2 2, 16" />
+			
+		</g>
+		<g id="_SijIsOTBEDGNZbmyTra1pQ" transform="translate(33, 345)">
+			<ellipse cx="9" cy="9" rx="9" ry="9" fill="#FFF" stroke="#888" stroke-width="1.0" />
+			<polyline fill="none" stroke-width="1" stroke="#888" points="2, 2 16, 16" />
+			<polyline fill="none" stroke-width="1" stroke="#888" points="16, 2 2, 16" />
+			
+		</g>
+		<g id="_UFzrMOTBEDGNZbmyTra1pQ">
+			<rect x="291" y="65" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="331" y="87" text-anchor="middle" font-style="normal" fill="#806221">Action4</text>
+			
+		</g>
+		<g id="_UrCfMOTBEDGNZbmyTra1pQ">
+			<ellipse cx="455" cy="83" rx="10" ry="10" fill="#FFF" stroke="#888" stroke-width="1.0" />
+			<ellipse cx="455" cy="83" rx="6" ry="6" fill="#4D4D4D" stroke-width="0.0" />
+			
+		</g>
+		<g id="_rKMM0OTBEDGNZbmyTra1pQ">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#CCCCCC" points="171,243 171,345 277,345 277,258 262,243 " />
+			<text x="175" y="248" fill="#2D2D2D">
+				<tspan x="175" y="260" font-size="12">i is greater than</tspan>
+				<tspan x="175" y="272" font-size="12">30 ?</tspan>
+				<tspan x="175" y="284" font-size="12">We have to code</tspan>
+				<tspan x="175" y="296" font-size="12">it, conditon is</tspan>
+				<tspan x="175" y="308" font-size="12">not generated</tspan>
+				<tspan x="175" y="320" font-size="12">(maybe in future</tspan>
+				<tspan x="175" y="332" font-size="12">version)</tspan>
+				
+			</text>
+			<polygon fill="#CCCCCC" stroke-width="1" stroke="#CCCCCC" points="262,243 262,258 277,258 " />
+			
+		</g>
+		<g id="_3OfsMOTBEDGNZbmyTra1pQ">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#CCCCCC" points="292,138 292,178 397,178 397,153 382,138 " />
+			<text x="296" y="143" fill="#2D2D2D">
+				<tspan x="296" y="155" font-size="12">i is less or</tspan>
+				<tspan x="296" y="167" font-size="12">equal to 100 ?</tspan>
+				
+			</text>
+			<polygon fill="#CCCCCC" stroke-width="1" stroke="#CCCCCC" points="382,138 382,153 397,153 " />
+			
+		</g>
+		<g id="_VH4zQOTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="43,22 42,78" />
+			<g transform="translate(42,78)">
+				<g transform="rotate(-179)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_VTj3wOTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="42,114 43,170" />
+			<g transform="translate(43,170)">
+				<g transform="rotate(179)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_VeeHQOTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="43,192 42,252" />
+			<g transform="translate(42,252)">
+				<g transform="rotate(-179)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_VvVNwOTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="42,288 42,345" />
+			<g transform="translate(42,345)">
+				<g transform="rotate(-180)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_V_V_seTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="54,181 143,181" />
+			<g transform="translate(143,181)">
+				<g transform="rotate(90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_WLVNQOTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="183,163 184,94" />
+			<g transform="translate(184,94)">
+				<g transform="rotate(1)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_WVxiseTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="184,72 183,20" />
+			<g transform="translate(183,20)">
+				<g transform="rotate(-1)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_WsR-MeTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="195,83 291,83" />
+			<g transform="translate(291,83)">
+				<g transform="rotate(90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_W6BfQOTBEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="371,83 445,83" />
+			<g transform="translate(445,83)">
+				<g transform="rotate(90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g>
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="54,188 171,262" stroke-dasharray="10, 5" />
+			
+		</g>
+		<g>
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="195,88 300,138" stroke-dasharray="10, 5" />
+			
+		</g>
+		<g>
+			<rect x="54" y="48" width="29" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="54" y="48" fill="#000000">[ i ]</text>
+			
+		</g>
+		<g>
+			<rect x="51" y="142" width="29" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="51" y="142" fill="#000000">[ i ]</text>
+			
+		</g>
+		<g>
+			<rect x="49" y="227" width="83" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="49" y="227" fill="#000000">[ false -&gt; i ]</text>
+			
+		</g>
+		<g>
+			<rect x="54" y="189" width="79" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="54" y="189" fill="#000000">[ true -&gt; i ]</text>
+			
+		</g>
+		<g>
+			<rect x="192" y="121" width="29" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="192" y="121" fill="#000000">[ i ]</text>
+			
+		</g>
+		<g>
+			<rect x="105" y="39" width="76" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="105" y="39" fill="#000000">[ false -&gt; ]</text>
+			
+		</g>
+		<g>
+			<rect x="207" y="58" width="72" height="21" rx="0" ry="0" fill="#FFF" stroke-width="0" />
+			<text x="207" y="58" fill="#000000">[ true -&gt; ]</text>
+			
+		</g>
+		
+	</g>
+	
+</svg>

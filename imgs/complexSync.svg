@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="13" width="1181" height="308">
+	<desc>UML diagram arnoldExamples</desc>
+	<g id="_fzIWUeSzEDGNZbmyTra1pQ">
+		<defs>
+			<linearGradient id="greyGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#E5E5E5" stop-opacity="1" />
+				
+			</linearGradient>
+			<linearGradient id="packageGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="1" />
+				
+			</linearGradient>
+			
+		</defs>
+		<g id="_iAflwOSzEDGNZbmyTra1pQ">
+			<ellipse cx="12" cy="172" rx="10" ry="10" fill="#4D4D4D" stroke="#000" stroke-width="1.0" />
+			
+		</g>
+		<g id="_ieiMoOSzEDGNZbmyTra1pQ">
+			<rect x="152" y="10" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="192" y="32" text-anchor="middle" font-style="normal" fill="#806221">Action</text>
+			
+		</g>
+		<g id="_iy56IOSzEDGNZbmyTra1pQ">
+			<rect x="149" y="161" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="189" y="183" text-anchor="middle" font-style="normal" fill="#806221">Action2</text>
+			
+		</g>
+		<g id="_jUAcEOSzEDGNZbmyTra1pQ">
+			<rect x="149" y="253" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="189" y="275" text-anchor="middle" font-style="normal" fill="#806221">Action3</text>
+			
+		</g>
+		<g id="_jxKSIOSzEDGNZbmyTra1pQ">
+			<rect x="369" y="111" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="409" y="133" text-anchor="middle" font-style="normal" fill="#806221">Action4</text>
+			
+		</g>
+		<g id="_kBBTEOSzEDGNZbmyTra1pQ">
+			<rect x="369" y="203" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="409" y="225" text-anchor="middle" font-style="normal" fill="#806221">Action5</text>
+			
+		</g>
+		<g id="_neW8oOSzEDGNZbmyTra1pQ">
+			<rect x="579" y="44" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="619" y="66" text-anchor="middle" font-style="normal" fill="#806221">Action6</text>
+			
+		</g>
+		<g id="_nofwEOSzEDGNZbmyTra1pQ">
+			<rect x="579" y="109" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="619" y="131" text-anchor="middle" font-style="normal" fill="#806221">Action7</text>
+			
+		</g>
+		<g id="_os2wEOSzEDGNZbmyTra1pQ">
+			<rect x="372" y="10" width="80" height="35" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="412" y="32" text-anchor="middle" font-style="normal" fill="#806221">Action8</text>
+			
+		</g>
+		<g id="_rW6ikOSzEDGNZbmyTra1pQ" transform="translate(956, 183)">
+			<g transform="rotate(45)">
+				<rect x="0" y="0" width="18" height="18" rx="0" ry="0" fill="url(#greyGradient)" stroke="#888" stroke-width="1" />
+				
+			</g>
+			
+		</g>
+		<g id="_tWoXkOSzEDGNZbmyTra1pQ">
+			<rect x="1005" y="176" width="93" height="37" rx="10" ry="0" fill="url(#packageGradient)" stroke="#c2b79f" stroke-width="1" />
+			<text x="1052" y="198" text-anchor="middle" font-style="normal" fill="#806221">BeforeFinal</text>
+			
+		</g>
+		<g id="_vBTJoOSzEDGNZbmyTra1pQ">
+			<ellipse cx="1151" cy="194" rx="10" ry="10" fill="#FFF" stroke="#888" stroke-width="1.0" />
+			<ellipse cx="1151" cy="194" rx="6" ry="6" fill="#4D4D4D" stroke-width="0.0" />
+			
+		</g>
+		<g id="_wcdgEOSzEDGNZbmyTra1pQ">
+			<rect x="72" y="149" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="__C_roOSzEDGNZbmyTra1pQ">
+			<rect x="776" y="2" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="__iCYEOSzEDGNZbmyTra1pQ">
+			<rect x="716" y="67" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="_CX2HkOS0EDGNZbmyTra1pQ">
+			<rect x="293" y="155" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="_DQdKkOS0EDGNZbmyTra1pQ">
+			<rect x="523" y="67" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="_FXV-kOS0EDGNZbmyTra1pQ">
+			<rect x="624" y="234" width="10" height="50" rx="0" ry="0" fill="#4D4D4D" stroke="#000" stroke-width="1" />
+			
+		</g>
+		<g id="_w9M1oOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="22,172 72,174" />
+			<g transform="translate(72,174)">
+				<g transform="rotate(92)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_xWFPsOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="82,168 178,46" />
+			<g transform="translate(178,46)">
+				<g transform="rotate(38)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_xhNhoOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="82,174 149,177" />
+			<g transform="translate(149,177)">
+				<g transform="rotate(93)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_xx1-oeSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="82,178 168,253" />
+			<g transform="translate(168,253)">
+				<g transform="rotate(131)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_yNTyoOSzEDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="232,28 372,28" />
+			<g transform="translate(372,28)">
+				<g transform="rotate(90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_M8vCoOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="229,179 293,180" />
+			<g transform="translate(293,180)">
+				<g transform="rotate(91)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_NGgpsOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="303,178 370,147" />
+			<g transform="translate(370,147)">
+				<g transform="rotate(65)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_NVObIOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="449,117 523,94" />
+			<g transform="translate(523,94)">
+				<g transform="rotate(73)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_NkV1MOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="533,90 579,75" />
+			<g transform="translate(579,75)">
+				<g transform="rotate(72)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_NyrMIOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="533,94 579,112" />
+			<g transform="translate(579,112)">
+				<g transform="rotate(111)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_OB8XMOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="659,74 716,91" />
+			<g transform="translate(716,91)">
+				<g transform="rotate(107)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_OMsOoOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="659,113 716,94" />
+			<g transform="translate(716,94)">
+				<g transform="rotate(72)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_OqI_oOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="634,258 945,196" />
+			<g transform="translate(945,196)">
+				<g transform="rotate(79)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_PnkRMOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="452,28 776,27" />
+			<g transform="translate(776,27)">
+				<g transform="rotate(90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_P6QjsOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="726,87 776,32" />
+			<g transform="translate(776,32)">
+				<g transform="rotate(42)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_QHmcIOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="786,32 945,184" />
+			<g transform="translate(945,184)">
+				<g transform="rotate(134)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_QT4koOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="967,194 1005,195" />
+			<g transform="translate(1005,195)">
+				<g transform="rotate(92)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_QiirsOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="1099,195 1141,194" />
+			<g transform="translate(1141,194)">
+				<g transform="rotate(89)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_RxHXoOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="303,182 369,206" />
+			<g transform="translate(369,206)">
+				<g transform="rotate(110)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_R-UGIOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="449,228 624,258" />
+			<g transform="translate(624,258)">
+				<g transform="rotate(100)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_SQeNIOS0EDGNZbmyTra1pQ">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="229,270 624,259" />
+			<g transform="translate(624,259)">
+				<g transform="rotate(88)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		
+	</g>
+	
+</svg>
