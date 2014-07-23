@@ -23,7 +23,7 @@ Going from activity diagrams to ArnoldC is not an ultra-easy task because of som
 handle integer variables. Consequently, function can only return one integer. There is also no `inout` function parameter or global variables (or we
 didn't find how to do). In order to keep global information about visited `join nodes`, we built a pseudo-structure by cutting an integer in 10 different position. Each position 
 is relative to a join node and each join node owns an ID (generated). This way, by passing this integer to functions as parameter, we can *simulate* a global registry. The 
-implied limitation is that we only can store 10 values in the [0-9] interval. In other words, you can only use 10 `join` per activity to synchronize at most 9 `action` per `join`.
+implied limitation is that we only can store 10 values in the [0-9] interval. In other words, you can only use 10 `joins` per activity to synchronize at most 9 `actions` per `join`.
 
 As ArnoldC code have to be in a single file, a little `sh` script is generated with the code. This file merge all the `.arnoldc` produced from an UML model (so from each `Activity`)
 and launch the result. 
